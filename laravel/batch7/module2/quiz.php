@@ -21,7 +21,7 @@
     ];
 
     $answers = [] ;
-    foreach($questions as $index => $question ){
+    foreach( $questions as $index => $question ){
         echo( $index + 1 ) . ". " . $question['question'] . "\n";
         $answers[] = trim(readline("Your answer: ")) ;
 

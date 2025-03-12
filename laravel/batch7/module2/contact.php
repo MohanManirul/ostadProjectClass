@@ -1,6 +1,10 @@
 <?php
     $contacts = [] ;
     
+    // print_r($contacts);
+    // var_dump($contacts);
+    // var_export($contacts);
+
     function addContact(array &$contacts , string $name , string $email, string $phone):void
     {
         $contacts[] = ['name' => $name , 'email' => $email, 'phone' => $phone ] ;
@@ -19,7 +23,7 @@
             }
         }
 
-    // terminal based intreface
+    // terminal based intreface || code this first
 
     while(true){
         echo "\nContact Management Menu:\n" ;
@@ -31,7 +35,9 @@
             $email = readline("Enter email: ") ;
             $phone = readline("Enter phone number: ") ;
             addContact( $contacts , $name , $email , $phone );
-            echo "$name added to contacts.\n" ;
+            echo "$name name added to contacts.\n" ;
+            echo "$email email added to contacts.\n" ;
+            echo "$phone phone added to contacts.\n" ;
         }elseif( $choice  === 2 ){
             displayContacts($contacts) ;
         }elseif( $choice  === 3 ){
