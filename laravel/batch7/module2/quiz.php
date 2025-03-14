@@ -1,5 +1,6 @@
 <?php
 
+    // 2. Evaluates the user's answers.
     function evaluateQuiz(array $questions , array $answers):int
     {
         $score = 0 ;
@@ -11,7 +12,9 @@
        return $score ;
     }
 
-    // example questions
+
+
+    // 1. Asks a set of predefined questions to the user.
     $questions = [
 
         ['question' => 'what is 2+2', 'correct'=>'4'],
@@ -21,13 +24,17 @@
     ];
 
     $answers = [] ;
+
+   
+    // var_export($contacts);
+
     foreach( $questions as $index => $question ){
         echo( $index + 1 ) . ". " . $question['question'] . "\n";
         $answers[] = trim(readline("Your answer: ")) ;
 
     }
 
-    // calculate score and provide feedback
+    //3. calculate score and provide feedback  Provides a score and feedback based on their performance.
     $score = evaluateQuiz( $questions , $answers ) ;
 
     echo "\nYou scored $score out of " . count($questions) . ".\n" ;
@@ -39,3 +46,5 @@
     }else{
         echo "Better Luck next time !\n";
     }
+
+    print_r($answers);
