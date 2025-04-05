@@ -1,13 +1,13 @@
 <?php
 
 abstract class VehicleBase {
-    
+
     protected $name ;
     protected $type ;
     protected $price ;
     protected $image ;
 
-    public function __construct($name,$type,$price,$image)
+    public function __construct( $name , $type , $price , $image )
     {
         $this->name = $name ;
         $this->type = $type ;
@@ -16,4 +16,5 @@ abstract class VehicleBase {
     }
 
     abstract public function getDetails() ;
+
 }
