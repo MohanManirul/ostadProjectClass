@@ -11,7 +11,7 @@ $vehicles  = $vehicleManager->getVehicles() ;
 
 include './views/header.php';
 ?>
-
+ 
 
 <div class="container my-4">
     <h1>Vehicle Listing</h1>
