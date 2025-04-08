@@ -1,32 +1,5 @@
 <?php
 
-require_once "../../app/classes/VehicleManager.php" ;
-
-$vehicleManager = new VehicleManager("","","","");
-$vehilces = $vehicleManager->getVehicles() ;
-
-$id = $_GET['id'];
-$vehilce = $vehilces[$id] ?? null ;
-
-if($id === null){
-    header("Location: ../index.php");
-    exit ;
-}
-
-if(!$vehilces){
-    header("Location: ../index.php");
-    exit ;
-}
-
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-  
-   if(isset($_POST['confirm']) && $_POST['confirm'] === 'yes' ){
-        $vehicleManager->deleteVehicle($id);
-   }
-    header("Location: ../index.php") ;
-    exit ; 
-}
-
 include './header.php';
 ?>
 

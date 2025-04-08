@@ -1,8 +1,4 @@
 <?php
-require_once "./../app/classes/VehicleManager.php" ;
-$vehicles = new VehicleManager("","","","") ;
-$vehicles = $vehicles->getVehicles() ;
- 
 include './views/header.php';
 ?>
 
@@ -13,29 +9,19 @@ include './views/header.php';
     <div class="row">
         <!-- Loop Go here -->
          
-        <?php if (!empty($vehicles)): ?>
-            <?php foreach($vehicles as $id => $vehicles): ?>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="<?= $vehicles['image'] ?>" class="card-img-top" style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $vehicles['name'] ?></h5> 
-                            <p class="card-text">Type: <?= $vehicles['type'] ?></p>
-                            <p class="card-text">Price: $<?= $vehicles['price'] ?></p>
-                            <a href="./views/edit.php?id=<?= $id ?>" class="btn btn-primary">Edit</a>
-                            <a href="./views/delete.php?id=<?= $id ?>" class="btn btn-danger">Delete</a>
-                        </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5> 
+                         <p class="card-text">Type: </p>
+                        <p class="card-text">Price: $</p>
+                        <a href="./views/edit.php?id=" class="btn btn-primary">Edit</a>
+                        <a href="./views/delete.php?id=" class="btn btn-danger">Delete</a>
                     </div>
                 </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <div class="col-12">
-                <div class="alert alert-warning text-center" role="alert">
-                    No vehicles found.
-                </div>
             </div>
-        <?php endif; ?>
-
+            
         <!-- Loop ends here -->
     </div>
 </div>

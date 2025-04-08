@@ -101,7 +101,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' ){
             <ul style="list-style: none; padding: 0;">
                 <!-- TODO: Loop through tasks array and display each task with a toggle and delete option -->
                 <!-- If there are no tasks, display a message saying "No tasks yet. Add one above!" -->
-                
+                <?php if() : ?>
+                    
                      <li>No tasks yet. Add one above!</li>
                     <!-- if there are tasks, display each task with a toggle and delete option -->
                  
@@ -122,7 +123,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' ){
                             <button type="submit" class="button button-outline" style="margin-left: 10px;">Delete</button>
                         </form>
                     </li>
-
+                <?php endif ; ?>
             </ul>
 
         </div>
