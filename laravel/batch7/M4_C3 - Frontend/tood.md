@@ -4,7 +4,7 @@ Step-by-Step To-Do for Vehicle Listing Application:
    Create the folder structure as mentioned in the project requirements.
 
 2. Implement Core Components
-
+ 
 # FileHandler Trait
 
 Create a trait to handle JSON file operations for reading and writing.

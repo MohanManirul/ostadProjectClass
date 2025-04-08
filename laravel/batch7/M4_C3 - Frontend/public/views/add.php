@@ -1,15 +1,21 @@
 <?php
- require_once "../../app/classes/VehicleManager.php";
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $vehicleManager  = new VehicleManager("","","","");
-    $vehicleManager->addVehicle([
-        "name"      => $_POST['name'],
-        "type"      => $_POST['type'],
-        "price"     => $_POST['price'],
-        "image"     => $_POST['image'],
-    ]);
-    header("Location: ../index.php") ;
-    exit ; 
+
+require_once "../../app/classes/VehicleManager.php";
+
+if($_SERVER['REQUEST_METHOD'] === "POST"){
+    
+    $vehicleManger = new VehicleManager("","","","");
+
+    $vehicleManger->addVehicle([
+        "name" =>  $_POST["name"], 
+        "type" =>  $_POST["type"] , 
+        "price" =>  $_POST["price"] , 
+        "image" =>  $_POST["image"]  
+    ]) ;
+
+    header("Location:../index.php") ;
+    exit;
+
 }
 
 include './header.php';

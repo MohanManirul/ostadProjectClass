@@ -1,34 +1,33 @@
 <?php
+require_once "../../app/classes/VehicleManager.php";
 
- require_once "../../app/classes/VehicleManager.php";
- $vehicleManager  = new VehicleManager("","","","");
+$vehicleManager = new VehicleManager('', '', '', '');
 
-$id = $_GET['id'] ?? null;
+$vehicles = $vehicleManager->getVehicles();
 
+$id = $_GET['id']?? null ;
 
-if($id === null){
-    header("Location: ../index.php") ;
-    exit ; 
+if($id === null ){
+    header("Location:../index.php");
+    exit ;
+}
+$vehicle = $vehicles[$id] ?? null ;
+
+if(!$vehicle){
+    header("Location:../index.php");
+    exit ;
 }
 
-$vehicles =  $vehicleManager->getVehicles();
-
-$vehicles = $vehicles[$id]?? null ;
-
-if(!$vehicles){
-    header("Location: ../index.php") ;
-    exit ; 
-}
-
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
-   
+if($_SERVER['REQUEST_METHOD'] === "POST"){
+  
     if(isset($_POST['confirm']) && $_POST['confirm'] === 'yes'){
-        $vehicleManager->deleteVehicle($id);
+        $vehicleManager->deleteVehicle($id) ;
     }
-    header("Location: ../index.php") ;
-    exit ; 
-}
 
+    header("Location:../index.php") ;
+    exit;
+
+}
 
 include './header.php';
 ?>

@@ -1,8 +1,11 @@
 <?php
- require_once "./../app/classes/VehicleManager.php";
 
- $vehicleManager  = new VehicleManager("","","","");
- $vehicles = $vehicleManager->getVehicles();
+require_once "./../app/classes/VehicleManager.php";
+
+$vehicleManger = new VehicleManager("","","","");
+$vehicles = $vehicleManger->getVehicles();
+
+
 include './views/header.php';
 ?>
 
