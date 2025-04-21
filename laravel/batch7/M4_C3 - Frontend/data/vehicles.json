@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "name": "BMW",
+        "type": "Car",
+        "price": "50000",
+        "image": "https:\/\/www.ekashmirtourism.com\/wp-content\/uploads\/2023\/11\/trekking.jpg"
+    },
+    {
+        "name": "Corolla",
+        "type": "Car",
+        "price": "36000",
+        "image": "https:\/\/www.ekashmirtourism.com\/wp-content\/uploads\/2023\/11\/trekking.jpg"
+    }
+]

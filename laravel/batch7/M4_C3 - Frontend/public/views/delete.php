@@ -1,33 +1,36 @@
 <?php
+
 require_once "../../app/classes/VehicleManager.php";
 
-$vehicleManager = new VehicleManager('', '', '', '');
+$vehicleManager = new VehicleManager("","","","");
 
-$vehicles = $vehicleManager->getVehicles();
 
-$id = $_GET['id']?? null ;
+$id = $_GET['id']?? null;
 
-if($id === null ){
+if( $id === null ){
     header("Location:../index.php");
     exit ;
 }
-$vehicle = $vehicles[$id] ?? null ;
 
-if(!$vehicle){
+$vehicles = $vehicleManager->getVehicles();
+
+$vehicle = $vehicles[$id]?? null ;
+
+if(!$vehicle ){
     header("Location:../index.php");
     exit ;
 }
 
 if($_SERVER['REQUEST_METHOD'] === "POST"){
-  
+   
     if(isset($_POST['confirm']) && $_POST['confirm'] === 'yes'){
         $vehicleManager->deleteVehicle($id) ;
-    }
+    } 
+    header("Location:../index.php");
+    exit ;
+ 
+ }
 
-    header("Location:../index.php") ;
-    exit;
-
-}
 
 include './header.php';
 ?>
