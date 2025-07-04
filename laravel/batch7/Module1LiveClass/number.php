@@ -3,6 +3,7 @@
 echo "Enter a number : ";
 
 $number = (int)readline();
+echo "The Number Is". $number ;
 
 if($number > 0){
     echo "The number is positive.\n" ;
