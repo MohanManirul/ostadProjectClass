@@ -2,9 +2,28 @@
 
 $contacts = [] ;
 
-function addContact(array &$contacts , string $name , string $email , string $phone){
+function addContact(array &$contacts , string $name , string $email , string $phone):void
+{
     $contacts[] = ['name'=> $name, 'email'=> $email, 'phone'=> $phone ];
+ 
+
 }
+
+
+// function addContact(array &$contacts , string $name , string $email , string $phone):void
+// {
+//     array_push($contacts, ['name'=> $name, 'email'=> $email, 'phone'=> $phone ]);
+
+// }
+
+// : void	এইটা লিখলে PHP বুঝে যাবে, ফাংশন কিছু return করবে না
+// এখানে &$contacts মানে হচ্ছে:
+
+//     যখন আপনি এই ফাংশনের ভিতরে $contacts ভ্যারিয়েবল ব্যবহার করছেন,
+
+//     তখন সেটা copy না করে মূল অ্যারেটিকেই পরিবর্তন করা হবে।
+
+// **:void** PHP-তে একটি return type declaration, যার মানে হলো "এই ফাংশন কিছুই return করবে না"।
 
 function displayContacts(array $contacts):void
 {
@@ -19,7 +38,6 @@ function displayContacts(array $contacts):void
             ";
     }
   }
-  
   
 
 }

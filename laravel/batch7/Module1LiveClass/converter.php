@@ -1,8 +1,9 @@
 <?php
 // C/5 = F-32 /9 ;
 
-define("FACTOR", 9/5);
-define("OFFSET", 32);
+
+const FACTOR = 9/5;
+const OFFSET = 32;
 
 echo "Temparature Value : ";
 

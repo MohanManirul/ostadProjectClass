@@ -8,8 +8,6 @@ function saveTasks(array $tasks):void
     file_put_contents( TASKS_FILE , json_encode($tasks, JSON_PRETTY_PRINT)) ;
 }
 
-
-
 function loadTasks() {
     if(!file_exists(TASKS_FILE)){
         return [];
@@ -22,6 +20,9 @@ function loadTasks() {
 
 $tasks = loadTasks();
 
+
+
+// $tasks[$_POST['toggle']]['done']
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST['task']) && !empty(trim($_POST['task'])) ){
@@ -44,6 +45,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
        exit;     
 
     }elseif(isset($_POST['toggle'])){
+      
         $tasks[$_POST['toggle']]['done'] = !$tasks[$_POST['toggle']]['done'];
         saveTasks($tasks);
         header('Location:' . $_SERVER['PHP_SELF']);
@@ -52,6 +54,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 }
 
 
+// if(isset($_POST['toggle'])){
+
+//     echo "<pre>";
+//         var_dump($tasks[$_POST["toggle"]]["done"]);
+//     echo "</pre>";
+//         exit;
+// }
 
 
 ?>
@@ -129,7 +138,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                                 <input type="hidden" name="toggle" value="<?= $index ?>">
                            
                                 <button type="submit" style="border: none; background: none; cursor: pointer; text-align: left; width: 100%;">
-                                    <span class="task <?= $task['done']? 'task-done': '' ?>">
+                                    <span class="task <?= $task['done'] ? 'task-done': '' ?>">
                                         <?= $task['task'] ?>
                                     </span>
                                 </button>
