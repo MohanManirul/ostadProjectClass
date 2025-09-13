@@ -1,5 +1,5 @@
 <?php
-
+ 
 abstract class VehicleBase {
     protected $name;
     protected $type;

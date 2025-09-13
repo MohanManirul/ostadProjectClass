@@ -1,5 +1,24 @@
 <?php
 
+require_once "../../app/classes/VehicleManager.php";
+
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    
+    $vehicleManager = new VehicleManager("","","","");
+    $vehicleManager->addVehicle([
+        'name' => $_POST['name'],
+        'type' => $_POST['type'],
+        'price' => $_POST['price'],
+        'image' => $_POST['image'],
+    ]) ;
+
+    header("Location: ../index.php") ;
+
+    exit ;
+}
+
+
+
 include './header.php';
 ?>
 
@@ -22,7 +41,7 @@ include './header.php';
             <label class="form-label">Image URL</label>
             <input type="text" name="image" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-primary">Add Vehicle</button>
+        <button type="submit" class="btn btn-primary">Add Vehicle fgf</button>
     </form>
 </div>
 

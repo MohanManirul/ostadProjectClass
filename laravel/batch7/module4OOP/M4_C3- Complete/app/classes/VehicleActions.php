@@ -7,3 +7,4 @@ interface VehicleActions {
    public function deleteVehicle($id);
    public function getVehicles();
 }
+ 

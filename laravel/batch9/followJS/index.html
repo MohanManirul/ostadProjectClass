@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Grade Management System</title>
+</head>
+<body>
+  <h1>Open Console to See Output</h1>
+  <script>
+    // ----------------------------
+// Student Grade Management System
+// ----------------------------
+// debugger 
+// 1. Variables, Data Types, Operators
+let students = []; // Array to store student objects
+let idCounter = 1; // Student ID auto increment
+
+// 2. Function: Add Student (Named Function, Passing Arguments)
+function addStudent(name, marks) {
+    // Real-life use case: inserting data into a system
+    let grade;
+
+    // 3. if-else Statement
+    if (marks >= 80) {
+        grade = "A+";
+    } else if (marks >= 70) {
+        grade = "A";
+    } else if (marks >= 60) {
+        grade = "B";
+    } else {
+        grade = "Fail";
+    }
+
+    // Object (Data Type)
+    let student = {
+        id: idCounter++,
+        name: name,
+        marks: marks,
+        grade: grade
+    };
+
+    students.push(student); // Array এ যোগ করা
+    return student; // Returning values
+}
+
+// 4. switch case statement → Searching student by ID
+/* students.find(s => s.id === id)
+
+students অ্যারের মধ্যে খুঁজবে এমন student যার id === দেওয়া id।
+
+যদি পায় → সেই student object return করবে।
+
+যদি না পায় → return হবে undefined।
+
+|| "Student not found!"
+
+যদি বাঁ দিকের মান (students.find(...)) truthy হয় (মানে student object পাওয়া গেছে), তাহলে সেটাই result এ যাবে।
+
+যদি বাঁ দিকের মান falsy হয় (মানে পাওয়া যায়নি → undefined), তাহলে "Student not found!" assign হবে result এ।
+*/
+function findStudent(id) {
+    let result;
+    switch (true) {
+        case students.length === 0:
+            result = "No students available!";
+            break;
+        default:
+            result = students.find(s => s.id === id) || "Student not found!"; // JavaScript এর short-circuit OR (||) operator ব্যবহার। এখানে s => s.id === id হলো arrow function (callback), যেটা .find() মেথডকে বলে দেয় কিভাবে অ্যারের প্রতিটি element চেক করতে হবে।
+
+    }
+    return result;
+}
+
+// 5. for loop → Show all students
+function showStudents() {
+    console.log("---- Student List ----");
+    for (let i = 0; i < students.length; i++) {
+        console.log(`${students[i].id}. ${students[i].name} - Marks: ${students[i].marks}, Grade: ${students[i].grade}`);
+    }
+}
+
+// 6. while loop → Calculate total marks
+/* let i = 0; → শুরুতে index 0 থেকে শুরু হচ্ছে (মানে students অ্যারের প্রথম student)।
+
+while (i < students.length) → যতক্ষণ পর্যন্ত i অ্যারের দৈর্ঘ্যের (length) থেকে ছোট, ততক্ষণ লুপ চলবে।
+
+total += students[i].marks; → index i তে থাকা student-এর marks যোগ করা হচ্ছে total এ।
+
+i++ → প্রতিবার লুপ ঘোরার পর index এক ধাপ এগিয়ে যায় (0 → 1 → 2 → …)।
+
+এটা না দিলে, i সবসময় 0 থেকে যাবে।
+
+তখন সবসময় students[0].marks যোগ হবে, এবং লুপ infinite loop হয়ে যাবে।
+*/
+function totalMarks() {
+    let i = 0;
+    let total = 0;
+    while (i < students.length) {
+        total += students[i].marks;
+        i++;
+    }
+    return total;
+}
+
+// 7. do-while loop → Ensure at least one print
+/* let printed = false;
+→ শুরুতে printed নামের ভেরিয়েবলকে false রাখা হলো।
+
+do { ... } while (!printed);
+
+do-while loop মানে হলো → লুপের ভেতরের কোড কমপক্ষে একবার চলবেই, তারপর condition চেক করবে।
+
+এখানে do { ... } ব্লকের ভেতরের কোড প্রথমে execute হবে।
+
+console.log("Welcome to Student Grade Management System");
+→ মেসেজ একবার প্রিন্ট হবে।
+
+printed = true;
+→ ভেরিয়েবলকে true করা হলো।
+
+while (!printed);
+
+এখন condition হলো !printed → মানে "printed না হলে"।
+
+যেহেতু printed = true, তাই !printed = false।
+
+condition false → লুপ থেমে যাবে।
+*/
+function showMessage() {
+    let printed = false;
+    do {
+        console.log("Welcome to Student Grade Management System");
+        printed = true;
+    } while (!printed);
+}
+
+// 8. for-in loop → Display student details (object properties)
+/* 
+এই function একটা student object ইনপুট হিসেবে নেয়।
+let student = { id: 1, name: "Rahim", marks: 85, grade: "A+" };
+for (let key in student)
+
+for...in loop object এর সব property (key) একে একে ঘুরে ঘুরে বের করে।
+
+উদাহরণস্বরূপ, উপরের student object এর জন্য key হবে একবার "id", একবার "name", একবার "marks", একবার "grade"।
+
+console.log(${key}: ${student[key]});
+
+এখানে template string ব্যবহার করে key এবং তার value প্রিন্ট করা হচ্ছে।
+
+যেমন:
+
+প্রথমে: id: 1
+
+তারপর: name: Rahim
+
+তারপর: marks: 85
+
+তারপর: grade: A+
+*/
+
+
+function showStudentDetails(student) {
+    console.log("---- Student Details ----");
+    for (let key in student) {
+        console.log(`${key}: ${student[key]}`);
+    }
+}
+
+// 9. Anonymous Function → Delete student
+ /* এখানে function এর কোনো নাম নেই (anonymous), কিন্তু এটাকে deleteStudent ভেরিয়েবলে রাখা হয়েছে।
+
+তাই এখন তুমি deleteStudent(3) লিখে কল করতে পারবে।
+index !== -1  এর মানে findIndex() method যদি array এর মধ্যে matching element পায়, তাহলে সেই element এর index number (0,1,2...) return করে।
+
+কিন্তু যদি না পায়, তাহলে return করে -1।
+
+let numbers = [10, 20, 30];
+
+let index1 = numbers.findIndex(n => n === 20); 
+// index1 = 1 (কারণ 20 হলো index 1 এ)
+
+let index2 = numbers.findIndex(n => n === 50); 
+// index2 = -1 (কারণ 50 নেই array তে)
+
+
+তাহলে index !== -1 মানে:
+
+যদি index -1 না হয় → element পাওয়া গেছে।
+
+যদি index -1 হয় → element পাওয়া যায়নি।
+
+index !== -1 মানে হলো “যদি element টা array এর মধ্যে থাকে”।
+.find() পুরো object / value return করে।
+.findIndex()
+
+👉 element এর index number return করে
+
+splice() কি?
+
+splice() হলো JavaScript এর array method।
+
+এটা array থেকে element remove বা add করতে ব্যবহার হয়।
+
+students.splice(index, 1)
+
+    index → যে student মুছে ফেলতে চাও তার position
+
+    1 → শুধু একটি element মুছে ফেলবে
+*/ 
+let deleteStudent = function (id) {
+    let index = students.findIndex(s => s.id === id);
+    if (index !== -1) {
+        students.splice(index, 1);
+        return "Student deleted successfully!";
+    } else {
+        return "Student not found!";
+    }
+};
+
+// 10. Arrow Function → Average marks
+let averageMarks = () => {
+    if (students.length === 0) return 0;
+    return totalMarks() / students.length;
+};
+
+// ----------------------------
+// Test the System
+// ----------------------------
+showMessage(); // Welcome message
+
+addStudent("Rahim", 85);
+addStudent("Karim", 72);
+addStudent("Jabbar", 58);
+
+showStudents(); // Show all students
+
+console.log(findStudent(2)); // Find by ID , just to print object in console
+showStudentDetails(students[0]); // Show details of first student
+
+console.log(deleteStudent(3)); // Delete Jabbar
+showStudents();
+
+console.log("Total Marks:", totalMarks());
+console.log("Average Marks:", averageMarks());
+
+  </script>
+</body>
+</html>
