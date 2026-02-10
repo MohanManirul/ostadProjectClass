@@ -1,0 +1,19 @@
+{
+    "welcome": "স্বাগতম",
+    "login": "লগইন",
+    "dashboard": "ড্যাশবোর্ড",
+
+    "flight_booking": "ফ্লাইট বুকিং",
+    "from": "যাত্রা শুরু",
+    "to": "গন্তব্য",
+    "from_city": "শহর থেকে",
+    "to_city": "শহরে",
+    "departure_date": "যাত্রার তারিখ",
+    "return_date": "ফেরার তারিখ",
+    "passengers": "যাত্রী",
+    "class": "শ্রেণী",
+    "economy": "ইকোনমি",
+    "business": "বিজনেস",
+    "search_flights": "ফ্লাইট খুঁজুন",
+    "Welcome to Holiday": "ছুটিতে স্বাগতম"
+}

@@ -1,0 +1,19 @@
+{
+    "welcome": "مرحبا",
+    "login": "تسجيل الدخول",
+    "dashboard": "لوحة التحكم",
+
+    "flight_booking": "حجز الطيران",
+    "from": "من",
+    "to": "إلى",
+    "from_city": "مدينة المغادرة",
+    "to_city": "مدينة الوصول",
+    "departure_date": "تاريخ المغادرة",
+    "return_date": "تاريخ العودة",
+    "passengers": "عدد الركاب",
+    "class": "الدرجة",
+    "economy": "اقتصادي",
+    "business": "رجال الأعمال",
+    "search_flights": "بحث عن الرحلات",
+    "Welcome to Holiday": "مرحبا بكم في عطلة" 
+}
