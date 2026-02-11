@@ -17,13 +17,13 @@ class SetLocale
     {
         if (Session::has('locale')) {
             App::setLocale(Session::get('locale'));
-        } else {
-            $browserLang = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
-            $available = ['en','bn','ar'];
+            } else {
+                $browserLang = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
+                $available = ['en','bn','ar'];
 
-            App::setLocale(in_array($browserLang, $available) ? $browserLang : 'en');
-        }
+                App::setLocale(in_array($browserLang, $available) ? $browserLang : 'en');
+            }
 
-        return $next($request);
+            return $next($request);
     }
 }

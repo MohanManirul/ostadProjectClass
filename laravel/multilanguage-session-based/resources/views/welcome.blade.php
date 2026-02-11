@@ -79,7 +79,10 @@
 <body>
 
 <div class="container">
-
+@php
+    $name = "Welcome to Holiday" ;
+@endphp
+<h3  style="text-align:center">{{ __($name) }}</h3>
     {{-- Language Switcher --}}
     <div class="lang-switch" style="text-align: right; margin-bottom: 15px; position: relative; display: inline-block;">
         <button style="padding:5px 10px; border:1px solid #ccc; border-radius:5px; cursor:pointer;">
@@ -180,3 +183,34 @@
 </script>
 </body>
 </html>
+
+{{-- 
+
+সংক্ষেপে
+
+dropdown → পুরো language switcher container
+
+btn → যেটায় click করলে dropdown open/close হবে
+
+menu → dropdown list (ul), যেটা show/hide হবে
+-----------------
+
+document.querySelector('.lang-switch')
+
+এটা HTML document থেকে .lang-switch class যুক্ত div কে select করছে।
+
+অর্থাৎ পুরো language switcher container কে ধরছে।
+
+এই variable পরে use করা হচ্ছে যাতে dropdown behavior control করা যায়। 
+
+----
+২️⃣ dropdown.querySelector('button')
+
+dropdown এর ভেতরের button element select করছে।
+
+আমাদের এখানে button হলো যে অংশে user ক্লিক করে, তারপর language list (ul) open/close হবে।
+------
+dropdown.querySelector('ul')
+
+ul element select করছে, যেটা language options ধরে রাখে।
+--}}
