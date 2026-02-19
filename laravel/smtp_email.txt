@@ -1,0 +1,22 @@
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=a389fdfe2a167e
+MAIL_PASSWORD=67513aed3ae5f5
+
+1. Job + Notification + Queue delay + Batch  inside admin panel
+2. Event → Listener inside Tenant dashboard
+
+https://chatgpt.com/c/698337e1-7820-83aa-8676-8276a5a24dc4
+--- php artisan make:event ApartmentBooked
+--- php artisan make:listener SendBookingNotificationListener --queued
+ *** queued makes listener implements ShouldQueue automatically ***
+ --- php artisan make:provider EventServiceProvider
+ --- php artisan make:job SendTenantBookingNotificationJob --queued
+ --- php artisan make:notification BookingCreatedNotification --queued
+
+cron job
+--------
+
+
+

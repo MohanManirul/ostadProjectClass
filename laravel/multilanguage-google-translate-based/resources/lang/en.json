@@ -1,0 +1,18 @@
+{
+    "welcome": "Welcome",
+    "login": "Login",
+    "dashboard": "Dashboard",
+    "flight_booking": "Flight Booking",
+    "from": "From",
+    "to": "To",
+    "from_city": "Departure City",
+    "to_city": "Destination City",
+    "departure_date": "Departure Date",
+    "return_date": "Return Date",
+    "passengers": "Passengers",
+    "class": "Class",
+    "economy": "Economy",
+    "business": "Business",
+    "search_flights": "Search Flights",
+    "Welcome to Holiday": "Welcome to Holiday"
+}
