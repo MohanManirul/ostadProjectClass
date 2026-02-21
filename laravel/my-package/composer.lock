@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc085ac07ee51454dd4da2c82b940fdc",
+    "content-hash": "ea8c2a40f33d125c9cd274dccacbaad8",
     "packages": [
         {
             "name": "brick/math",
@@ -2081,6 +2081,32 @@
                 }
             ],
             "time": "2026-01-15T06:54:53+00:00"
+        },
+        {
+            "name": "manirul/crudpackage",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "packages/manirul/crudpackage",
+                "reference": "998b33de095da14aff4fa601fc21c237ce8eda55"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Manirul\\CrudPackage\\CrudPackageServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Manirul\\CrudPackage\\": "src/"
+                }
+            },
+            "description": "Simple CRUD Package",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "monolog/monolog",
