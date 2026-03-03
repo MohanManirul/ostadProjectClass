@@ -1,0 +1,39 @@
+Auto Close Tag
+Auto Complete Tag
+Auto Import
+Auto Import - ES6, TS, JSX, TSX
+Auto Rename Tag
+Beautify Blade
+Bootstrap 5 Pro Snippets
+Bracket Pair Color DLW
+Bracket Pair Colorization Toggler
+Code Runner
+GitLens — Git supercharged
+Highlight Matching Tag
+Laravel Artisan
+Laravel Blade formatter
+Laravel Blade Snippets
+Laravel Blade Spacer
+Laravel Goto Controller
+Laravel Goto Path
+Laravel goto view
+Live Server
+Path Autocomplete
+Path Intellisense
+PHP Intelephense
+PHP Server
+Prettier - Code formatter
+
+Vetur
+vscode-icons
+Vue 3 Snippets
+Vue VSCode Snippets
+
+
+
+
+
+
+
+
+
